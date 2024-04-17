@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --custom-yellow: #999B30;
+  --custom-yellow_1: #7A9A01;
+  --custom-yellow_2: #76881D;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background-image: url("/assets/images/bg_image.avif");
+  background-size: cover;
+  background-position: center;
+  font-family: 'Fjalla One';
+  color: rgb(var(--foreground-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Mes styles personnalisés */ 
+
+/* Les liens pour les barres de navigations */
+
+.link {
+  @apply flex mr-11 justify-center items-center gap-14;
+}
+
+.special_h {
+  color: var(--custom-yellow_1);
+}
+.special_l {
+  color: var(--custom-yellow);
+}
+.special_l {
+  color: var(--custom-yellow_2);
+}
+
+.parabola {
+  width: 200px;
+  height: 200px;
+  background-color: #f0f;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.parabola:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: #0ff;
+  border-radius: 50%;
+  transform: translateX(-50%) scaleY(2);
+}
+
+.text-outline {
+  -webkit-text-stroke-width: 1px; /* Largeur du contour */
+  -webkit-text-stroke-color: #8fad00; /* Couleur du contour */
+  color: transparent; /* Rend le texte intérieur transparent */
+}
+.text-outline_white {
+  -webkit-text-stroke-width: 1px; /* Largeur du contour */
+  -webkit-text-stroke-color: white; /* Couleur du contour */
+  color: transparent; /* Rend le texte intérieur transparent */
+}
+
